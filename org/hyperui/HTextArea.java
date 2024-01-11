@@ -12,6 +12,12 @@ public class HTextArea extends JTextArea {
         loadOptions();
     }
 
+    public HTextArea setClasses(String classOptionKey) {
+        loadOptions(HCSS.getClassOption(classOptionKey));
+        this.revalidate();
+        this.repaint();
+        return this;
+    }
     public HTextArea setClasses(String[] classes) {
         for (Options options : HCSS.getClasses(classes))
             loadOptions(options);

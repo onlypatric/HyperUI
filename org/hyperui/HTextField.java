@@ -12,6 +12,12 @@ public class HTextField extends JTextField {
         loadOptions();
     }
 
+    public HTextField setClasses(String classOptionKey) {
+        loadOptions(HCSS.getClassOption(classOptionKey));
+        this.revalidate();
+        this.repaint();
+        return this;
+    }
     public HTextField setClasses(String[] classes) {
         for (Options options : HCSS.getClasses(classes))
             loadOptions(options);

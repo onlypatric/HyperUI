@@ -12,6 +12,12 @@ public class HRadioButton extends JRadioButton {
         loadOptions();
     }
 
+    public HRadioButton setClasses(String classOptionKey) {
+        loadOptions(HCSS.getClassOption(classOptionKey));
+        this.revalidate();
+        this.repaint();
+        return this;
+    }
     public HRadioButton addID(String ID) {
         HManager.addComponent(ID, this);
         return this;

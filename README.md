@@ -132,6 +132,16 @@ Each component, apart from HFrame, has a `addID` method, when passing any `Strin
 
 You can also remove ID's by using `HManager.removeComponent(String ID)`, it will return a `boolean` indicating wether or not it has been removed
 
+## Applying same styles to different components
+
+You can easily apply same styles using `HCSS` class, here's an example:
+
+```java
+HCSS.addClass("test", Options.create().Text("My test class works").Foreground(Color.RED));
+```
+
+and you can easily add the class to any type of Hyper Component using `.setClasses(new String[]{"myclass1","myclass2"})`
+
 ## Component List
 
 * `HFrame` main frame of an Application

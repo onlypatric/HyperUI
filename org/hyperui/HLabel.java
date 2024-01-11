@@ -12,6 +12,12 @@ public class HLabel extends JLabel {
         loadOptions();
     }
 
+    public HLabel setClasses(String classOptionKey) {
+        loadOptions(HCSS.getClassOption(classOptionKey));
+        this.revalidate();
+        this.repaint();
+        return this;
+    }
     public HLabel setClasses(String[] classes) {
         for (Options options : HCSS.getClasses(classes))
             loadOptions(options);

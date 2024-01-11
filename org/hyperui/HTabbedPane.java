@@ -27,6 +27,12 @@ public class HTabbedPane extends JTabbedPane {
         return this;
     }
 
+    public HTabbedPane setClasses(String classOptionKey) {
+        loadOptions(HCSS.getClassOption(classOptionKey));
+        this.revalidate();
+        this.repaint();
+        return this;
+    }
     private void loadOptions(Options customOptions) {
         if (customOptions != null) {
             if (customOptions instanceof ContainerOptions) {

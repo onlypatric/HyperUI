@@ -19,6 +19,12 @@ public class HFrame extends JFrame {
         return this;
     }
 
+    public HFrame setClasses(String classOptionKey) {
+        loadOptions(HCSS.getClassOption(classOptionKey));
+        this.revalidate();
+        this.repaint();
+        return this;
+    }
     private void loadOptions(Options customOptions) {
         if (customOptions != null) {
             if (customOptions instanceof ContainerOptions) {

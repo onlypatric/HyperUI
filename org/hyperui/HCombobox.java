@@ -20,6 +20,12 @@ public class HCombobox<E> extends JComboBox<E> {
         return this;
     }
 
+    public HCombobox<E> setClasses(String classOptionKey) {
+        loadOptions(HCSS.getClassOption(classOptionKey));
+        this.revalidate();
+        this.repaint();
+        return this;
+    }
     private void loadOptions(Options customOptions) {
         if (customOptions != null) {
             // Load common options from the base class

@@ -23,6 +23,12 @@ public class HScrollPane extends JScrollPane {
         return this;
     }
 
+    public HScrollPane setClasses(String classOptionKey) {
+        loadOptions(HCSS.getClassOption(classOptionKey));
+        this.revalidate();
+        this.repaint();
+        return this;
+    }
     private void loadOptions(Options customOptions) {
         if (customOptions != null) {
             // Load common options from the base class

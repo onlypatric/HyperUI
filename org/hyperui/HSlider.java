@@ -29,6 +29,12 @@ public class HSlider extends JSlider {
         return this;
     }
 
+    public HSlider setClasses(String classOptionKey) {
+        loadOptions(HCSS.getClassOption(classOptionKey));
+        this.revalidate();
+        this.repaint();
+        return this;
+    }
     private void loadOptions(Options customOptions) {
         if (customOptions != null) {
             // Load common options from the base class

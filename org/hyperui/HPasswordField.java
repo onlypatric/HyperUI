@@ -25,6 +25,12 @@ public class HPasswordField extends JPasswordField {
         return this;
     }
 
+    public HPasswordField setClasses(String classOptionKey) {
+        loadOptions(HCSS.getClassOption(classOptionKey));
+        this.revalidate();
+        this.repaint();
+        return this;
+    }
     private void loadOptions(Options customOptions) {
         if (customOptions != null) {
             // Load common options from the base class

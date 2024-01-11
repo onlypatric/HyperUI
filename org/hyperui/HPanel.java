@@ -98,6 +98,12 @@ public class HPanel extends JPanel {
         return this;
     }
 
+    public HPanel setClasses(String classOptionKey) {
+        loadOptions(HCSS.getClassOption(classOptionKey));
+        this.revalidate();
+        this.repaint();
+        return this;
+    }
     private void loadOptions(Options customOptions) {
         if (customOptions != null) {
             if (customOptions instanceof ContainerOptions) {
