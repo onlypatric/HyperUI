@@ -11,6 +11,44 @@ public class HFrame extends JFrame {
 
     private ContainerOptions options;
 
+    public HFrame setClasses(String[] classes) {
+        for (Options options : HCSS.getClasses(classes))
+            loadOptions(options);
+        this.revalidate();
+        this.repaint();
+        return this;
+    }
+
+    private void loadOptions(Options customOptions) {
+        if (customOptions != null) {
+            if (customOptions instanceof ContainerOptions) {
+                ContainerOptions customContainerOptions = (ContainerOptions) customOptions;
+                loadComponents(customContainerOptions.getComponents());
+                setLayoutBasedOnOption(customContainerOptions.getLayoutOption());
+            }
+            // Load common options from the base class
+            if (customOptions.getBackground() != null)
+                setBackground(customOptions.getBackground());
+            if (customOptions.getForeground() != null)
+                setForeground(customOptions.getForeground());
+            if (customOptions.getFont() != null)
+                setFont(customOptions.getFont());
+            setEnabled(customOptions.isEnabled());
+            if (customOptions.getSize() != null)
+                setSize(customOptions.getSize());
+            if (customOptions.getLocation() != null)
+                setLocation(customOptions.getLocation());
+
+            if (customOptions.getMouseListener() != null)
+                addMouseListener(options.getMouseListener());
+            if (customOptions.getKeyListener() != null)
+                addKeyListener(options.getKeyListener());
+            if (customOptions.getFocusListener() != null)
+                addFocusListener(customOptions.getFocusListener());
+            if (customOptions.getMouseMotionListener() != null)
+                addMouseMotionListener(customOptions.getMouseMotionListener());
+        }
+    }
     public HFrame(ContainerOptions options) {
         super();
         this.options = options;

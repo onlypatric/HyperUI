@@ -15,6 +15,38 @@ public class HScrollPane extends JScrollPane {
         }
     }
 
+    public HScrollPane setClasses(String[] classes) {
+        for (Options options : HCSS.getClasses(classes))
+            loadOptions(options);
+        this.revalidate();
+        this.repaint();
+        return this;
+    }
+
+    private void loadOptions(Options customOptions) {
+        if (customOptions != null) {
+            // Load common options from the base class
+            if (customOptions.getBackground() != null)
+                setBackground(customOptions.getBackground());
+            if (customOptions.getForeground() != null)
+                setForeground(customOptions.getForeground());
+            if (customOptions.getFont() != null)
+                setFont(customOptions.getFont());
+            setEnabled(customOptions.isEnabled());
+            if (customOptions.getBorder() != null)
+                setBorder(customOptions.getBorder());
+            if (customOptions.getToolTipText() != null)
+                setToolTipText(customOptions.getToolTipText());
+            if (customOptions.getSize() != null)
+                setSize(customOptions.getSize());
+            if (customOptions.getLocation() != null)
+                setLocation(customOptions.getLocation());
+            if (customOptions.getFocusListener() != null)
+                addFocusListener(customOptions.getFocusListener());
+            if (customOptions.getMouseMotionListener() != null)
+                addMouseMotionListener(customOptions.getMouseMotionListener());
+        }
+    }
     public HScrollPane addID(String ID) {
         HManager.addComponent(ID, this);
         return this;
