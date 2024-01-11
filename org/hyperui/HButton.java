@@ -1,5 +1,4 @@
 package org.hyperui;
-
 import javax.swing.JButton;
 
 public class HButton extends JButton {
@@ -32,8 +31,15 @@ public class HButton extends JButton {
     private void loadOptions(Options customOptions) {
         if (customOptions != null) {
             // Load common options from the base class
-            if (customOptions.getBackground() != null)
+            setContentAreaFilled(customOptions.isContentAreaFilled());
+            setOpaque(options.isOpaque());
+            setFocusPainted(options.isFocusPainted());
+            setBorderPainted(options.isBorderPainted());
+            if (customOptions.getBackground() != null){
                 setBackground(customOptions.getBackground());
+                setFocusPainted(false);
+                setOpaque(true);
+            }
             if (customOptions.getForeground() != null)
                 setForeground(customOptions.getForeground());
             if (customOptions.getFont() != null)
@@ -49,7 +55,7 @@ public class HButton extends JButton {
                 setLocation(customOptions.getLocation());
             if (customOptions.getActionListener() != null)
                 addActionListener(customOptions.getActionListener());
-
+            
             // Load JButton specific options
             if (customOptions.getText() != null)
                 setText(customOptions.getText());
@@ -70,8 +76,15 @@ public class HButton extends JButton {
     private void loadOptions() {
         if (options != null) {
             // Load common options from the base class
-            if (options.getBackground() != null)
+            setContentAreaFilled(options.isContentAreaFilled());
+            setOpaque(options.isOpaque());
+            setFocusPainted(options.isFocusPainted());
+            setBorderPainted(options.isBorderPainted());
+            if (options.getBackground() != null){
                 setBackground(options.getBackground());
+                setFocusPainted(false);
+                setOpaque(true);
+            }
             if (options.getForeground() != null)
                 setForeground(options.getForeground());
             if (options.getFont() != null)
@@ -105,5 +118,4 @@ public class HButton extends JButton {
                 addMouseMotionListener(options.getMouseMotionListener());
         }
     }
-
 }

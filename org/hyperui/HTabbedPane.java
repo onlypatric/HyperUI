@@ -69,6 +69,7 @@ public class HTabbedPane extends JTabbedPane {
     }
     private void loadOptions() {
         if (options != null) {
+            
             // Load common options from the base class
             if (options.getBackground() != null) setBackground(options.getBackground());
             if (options.getForeground() != null) setForeground(options.getForeground());

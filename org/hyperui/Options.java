@@ -18,6 +18,7 @@ import javax.swing.border.Border;
 public class Options {
 
     private Color background, foreground;
+    private boolean borderPainted, contentAreaFilled, focusPainted,opaque;
     private Font font;
     private boolean enabled;
     private Border border;
@@ -31,6 +32,55 @@ public class Options {
     private ItemListener itemListener;
     private MouseMotionListener mouseMotionListener;
     private String text;
+    
+    public boolean isOpaque() {
+        return opaque;
+    }
+
+    public Options Opaque(boolean opaque) {
+        this.opaque = opaque;
+        return this;
+    }
+    
+    public boolean isFocusPainted() {
+        return focusPainted;
+    }
+
+    public Options FocusPainted(boolean focusPainted) {
+        this.focusPainted = focusPainted;
+        return this;
+    }
+    /**
+     * @return
+     */
+    public boolean isBorderPainted() {
+        return borderPainted;
+    }
+
+    /**
+     * @param borderPainted
+     * @return
+     */
+    public Options BorderPainted(boolean borderPainted) {
+        this.borderPainted = borderPainted;
+        return this;
+    }
+
+    /**
+     * @return
+     */
+    public boolean isContentAreaFilled() {
+        return contentAreaFilled;
+    }
+
+    /**
+     * @param contentAreaFilled
+     * @return
+     */
+    public Options ContentAreaFilled(boolean contentAreaFilled) {
+        this.contentAreaFilled = contentAreaFilled;
+        return this;
+    }
 
     /**
      * Gets the text associated with the options.
@@ -239,6 +289,9 @@ public class Options {
      */
     public Options() {
         enabled = true;
+        borderPainted = true;
+        contentAreaFilled = true;
+        focusPainted = true;
     }
 
     /**
@@ -260,7 +313,9 @@ public class Options {
         this.background = background;
         return this;
     }
-
+    public Options FlatButton(){
+        return ContentAreaFilled(false).FocusPainted(false).BorderPainted(false).Opaque(false);
+    }
     /**
      * Sets the foreground color for the options.
      *
