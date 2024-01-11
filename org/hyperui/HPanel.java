@@ -103,7 +103,7 @@ public class HPanel extends JPanel {
         }
     }
 
-    public HPanel setID(String ID) {
+    public HPanel addID(String ID) {
         HManager.addComponent(ID, this);
         return this;
     }

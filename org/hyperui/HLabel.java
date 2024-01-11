@@ -12,7 +12,7 @@ public class HLabel extends JLabel {
         loadOptions();
     }
 
-    public HLabel setID(String ID) {
+    public HLabel addID(String ID) {
         HManager.addComponent(ID, this);
         return this;
     }

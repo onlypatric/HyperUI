@@ -14,4 +14,7 @@ public class HManager {
     public static JComponent getComponent(String id) {
         return componentMap.get(id);
     }
+    public static boolean removeComponent(String id){
+        return componentMap.remove(id)!=null;
+    }
 }

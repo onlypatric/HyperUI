@@ -12,7 +12,7 @@ public class HCheckBox extends JCheckBox {
         loadOptions();
     }
 
-    public HCheckBox setID(String ID) {
+    public HCheckBox addID(String ID) {
         HManager.addComponent(ID, this);
         return this;
     }

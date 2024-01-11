@@ -12,7 +12,7 @@ public class HTextField extends JTextField {
         loadOptions();
     }
 
-    public HTextField setID(String ID) {
+    public HTextField addID(String ID) {
         HManager.addComponent(ID, this);
         return this;
     }

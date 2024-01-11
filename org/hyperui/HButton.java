@@ -12,7 +12,7 @@ public class HButton extends JButton {
         loadOptions();
     }
 
-    public HButton setID(String ID) {
+    public HButton addID(String ID) {
         HManager.addComponent(ID, this);
         return this;
     }

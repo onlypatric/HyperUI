@@ -12,7 +12,7 @@ public class HTextArea extends JTextArea {
         loadOptions();
     }
 
-    public HTextArea setID(String ID) {
+    public HTextArea addID(String ID) {
         HManager.addComponent(ID, this);
         return this;
     }

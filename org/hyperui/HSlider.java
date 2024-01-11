@@ -6,7 +6,7 @@ public class HSlider extends JSlider {
 
     private Options options;
 
-    public HSlider setID(String ID) {
+    public HSlider addID(String ID) {
         HManager.addComponent(ID, this);
         return this;
     }

@@ -12,7 +12,7 @@ public class HRadioButton extends JRadioButton {
         loadOptions();
     }
 
-    public HRadioButton setID(String ID) {
+    public HRadioButton addID(String ID) {
         HManager.addComponent(ID, this);
         return this;
     }

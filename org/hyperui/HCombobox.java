@@ -12,7 +12,7 @@ public class HCombobox<E> extends JComboBox<E> {
         loadOptions();
     }
 
-    public HCombobox<E> setID(String ID) {
+    public HCombobox<E> addID(String ID) {
         HManager.addComponent(ID, this);
         return this;
     }

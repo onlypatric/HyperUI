@@ -12,7 +12,7 @@ public class HPasswordField extends JPasswordField {
         loadOptions();
     }
 
-    public HPasswordField setID(String ID) {
+    public HPasswordField addID(String ID) {
         HManager.addComponent(ID, this);
         return this;
     }

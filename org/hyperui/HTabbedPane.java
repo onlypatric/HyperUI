@@ -14,7 +14,7 @@ public class HTabbedPane extends JTabbedPane {
         loadOptions();
     }
 
-    public HTabbedPane setID(String ID) {
+    public HTabbedPane addID(String ID) {
         HManager.addComponent(ID, this);
         return this;
     }

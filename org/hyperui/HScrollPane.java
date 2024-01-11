@@ -15,7 +15,7 @@ public class HScrollPane extends JScrollPane {
         }
     }
 
-    public HScrollPane setID(String ID) {
+    public HScrollPane addID(String ID) {
         HManager.addComponent(ID, this);
         return this;
     }

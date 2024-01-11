@@ -12,7 +12,7 @@ public class HProgressBar extends JProgressBar {
         loadOptions();
     }
 
-    public HProgressBar setID(String ID) {
+    public HProgressBar addID(String ID) {
         HManager.addComponent(ID, this);
         return this;
     }
